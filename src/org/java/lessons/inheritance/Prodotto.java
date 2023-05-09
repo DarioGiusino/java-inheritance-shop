@@ -61,7 +61,7 @@ public class Prodotto {
 	}
 	
 	public String getDescription() {
-		return "[" + getCode() + " " + getBrand() + "]" + getLabel()
+		return "*" + getCode() + " " + getBrand() + "*" + getLabel()
 		+ "\nPrezzo iva esclusa(iva): " + getPrice() + "(" + getVat() + ")"
 		+ "\nPrezzo comprensivo di iva: " + getFormattedPrice();
 	}
