@@ -5,8 +5,8 @@ public class Cuffia extends Prodotto {
 	private String color;
 	private boolean wireless;
 	
-	public Cuffia(int code, String label, String brand, double price, int vat, String color, boolean wireless) {
-		super(code, label, brand, price, vat);
+	public Cuffia(String label, String brand, double price, int vat, String color, boolean wireless) {
+		super(label, brand, price, vat);
 		setColor(color);
 		setWireless(wireless);
 	}

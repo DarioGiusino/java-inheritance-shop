@@ -1,5 +1,7 @@
 package org.java.lessons.inheritance;
 
+import java.util.Random;
+
 public class Prodotto {
 	
 	private int code;
@@ -8,8 +10,14 @@ public class Prodotto {
 	private double price;
 	private int vat;
 	
-	public Prodotto(int code, String label, String brand, double price, int vat) {
+	public Prodotto(String label, String brand, double price, int vat) {
+		Random rnd = new Random();
 		
+		code = rnd.nextInt(999999);
+		setLabel(label);
+		setBrand(brand);
+		setPrice(price);
+		setVat(vat);
 	}
 
 	public int getCode() {
