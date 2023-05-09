@@ -1,21 +1,23 @@
 package org.java.lessons.inheritance;
 
+import java.util.Random;
+
 public class Smartphone extends Prodotto {
 	
 	private String IMEI;
 	private int memory;
 	
-	public Smartphone(String label, String brand, double price, int vat, String IMEI, int memory) {
+	public Smartphone(String label, String brand, double price, int vat, int memory) {
 		super(label, brand, price, vat);
-		setIMEI(IMEI);
+		
+		Random rnd = new Random();
+		IMEI = "" + rnd.nextInt(999999999);
+		
 		setMemory(memory);
 	}
 
 	public String getIMEI() {
 		return IMEI;
-	}
-	public void setIMEI(String iMEI) {
-		IMEI = iMEI;
 	}
 
 	public int getMemory() {
