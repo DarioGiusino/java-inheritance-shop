@@ -1,6 +1,5 @@
 package org.java.lessons.inheritance;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Catalogo {
@@ -9,8 +8,9 @@ public class Catalogo {
 		Scanner sc = new Scanner(System.in);
 
 		Prodotto[] catalogo = new Prodotto[10];
+		int i = 0;
 
-		for (int i = 0; i < catalogo.length; i++) {
+		while(true) {
 
 			System.out.println("Decidi quale nuovo prodotto inserire:" + "\n[1] Smartphone" + "\n[2] Televisore"
 					+ "\n[3] Cuffie" + "\n[4] Esci");
@@ -42,6 +42,7 @@ public class Catalogo {
 				Smartphone prodotto = new Smartphone(label, brand, price, vat, ram);
 
 				catalogo[i] = prodotto;
+				i++;
 			}
 				break;
 
@@ -67,6 +68,7 @@ public class Catalogo {
 				Televisore prodotto = new Televisore(label, brand, price, vat, inches, isSmart);
 
 				catalogo[i] = prodotto;
+				i++;
 			}
 				break;
 
@@ -92,14 +94,21 @@ public class Catalogo {
 				Televisore prodotto = new Televisore(label, brand, price, vat, color, isWireless);
 
 				catalogo[i] = prodotto;
+				i++;
 			}
 				break;
 
 			default:
-				System.out.println("\n-----------CATALOGO----------\n");
-
-				System.out.println(Arrays.asList(catalogo));
-
+				System.out.println("\nDi seguito il catalogo inserito:\n");
+				
+				for(int x = 0; x < i; x++) {
+					if (catalogo[x] != null) {
+						System.out.println("\n---------Prodotto " + x+1 +"-------------\n");
+						System.out.println(catalogo[x]);
+						}
+				}
+				sc.close();
+				
 				return;
 			}
 
